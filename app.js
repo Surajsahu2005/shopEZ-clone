@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
-const Product = require("./models/Product");
+const Product = require("./models/product");
 const path = require("path");
 const User = require("./models/User");
 
