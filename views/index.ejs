@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ShopEZ</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <h2>ShopEZ</h2>
+    <input type="text" placeholder="Search products..." />
+    <button>Login</button>
+    <a href="/cart">🛒 Cart</a>
+    <a href="/home"> home</a>
+    <a href="/customer"> customer</a>
+    <a href="/register">Register</a>
+</div>
+
+<!-- Banner -->
+<div class="banner">
+    <img src="Super sale frontpage.png" />
+</div>
+
+<!-- Categories -->
+<div class="categories">
+     <div class="cat" onclick="window.location='/products'"></div>
+    <!--<div class="cat" ><img src="FashionShow.png" />Fashion</div>
+    <div class="cat"> <img src="Electronics.png" />Electronics</div>
+    <div class="cat"><img src="mobile.png" />Mobiles</div>
+    <div class="cat"> <img src="gloceries.png" />Groceries</div>
+    <div class="cat"> <img src="sports.png" />Sports</div> -->
+    <!-- <div class="cat" onclick="window.location='/products'"> -->
+    <a href="/products">
+    <div class="cat">
+        <img src="FashionShow.png" />
+        <p>Fashion</p>
+    </div>
+</a>
+<a href="/products">
+    <div class="cat">
+        <img src="Electronics.png" />
+        <p>Electronics</p>
+    </div>
+</a>
+<a href="/products">
+    <div class="cat">
+        <img src="mobile.png" />
+        <p>Mobiles</p>
+    </div>
+</a>
+<a href="/products">
+    <div class="cat">
+        <img src="gloceries.png" />
+        <p>Groceries</p>
+    </div>
+</a>
+</div>
+
+    
+<div class="categories">
+     <div class="cat" onclick="window.location='/products'"></div>
+    <!--<div class="cat" ><img src="FashionShow.png" />Fashion</div>
+    <div class="cat"> <img src="Electronics.png" />Electronics</div>
+    <div class="cat"><img src="mobile.png" />Mobiles</div>
+    <div class="cat"> <img src="gloceries.png" />Groceries</div>
+    <div class="cat"> <img src="sports.png" />Sports</div> -->
+    <!-- <div class="cat" onclick="window.location='/products'"> -->
+    <a href="/products">
+    <div class="cat">
+        <img src="sports.png" />
+        <p>Sports</p>
+    </div>
+</a>
+<a href="/products">
+    <div class="cat">
+        <img src="Gym.png" />
+        <p>Gym</p>
+    </div>
+</a>
+<a href="/products">
+    <div class="cat">
+        <img src="apple ph.png" />
+        <p>iphone</p>
+    </div>
+</a>
+<a href="/products">
+    <div class="cat">
+        <img src="House.png" />
+        <p>House</p>
+    </div>
+</a>
+</div>
+
+
+
+<!-- Products -->
+<div class="products">
+    <% products.forEach(p => { %>
+        <div class="card">
+            <img src="<%= p.image %>" />
+            <h3><%= p.name %></h3>
+            <p>₹<%= p.price %></p>
+        </div>
+    <% }) %>
+</div>
+
+<div class="product-container">
+    <% for(let product of allProducts) { %>
+        <div class="product-card">
+            <img src="/<%= product.image %>" alt="<%= product.name %>">
+            
+            <div class="product-info">
+                <h3><%= product.name %></h3>
+                <p>₹ <%= product.price %></p>
+                <% if(product.oldPrice) { %>
+                    <span class="strike">₹ <%= product.oldPrice %></span>
+                <% } %>
+            </div>
+        </div>
+    <% } %>
+</div>
+
+
+
+
+
+</body>
+</html>
