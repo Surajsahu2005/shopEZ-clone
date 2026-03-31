@@ -95,31 +95,7 @@
 
 
 <!-- Products -->
-<div class="products">
-    <% products.forEach(p => { %>
-        <div class="card">
-            <img src="<%= p.image %>" />
-            <h3><%= p.name %></h3>
-            <p>₹<%= p.price %></p>
-        </div>
-    <% }) %>
-</div>
 
-<div class="product-container">
-    <% for(let product of allProducts) { %>
-        <div class="product-card">
-            <img src="/<%= product.image %>" alt="<%= product.name %>">
-            
-            <div class="product-info">
-                <h3><%= product.name %></h3>
-                <p>₹ <%= product.price %></p>
-                <% if(product.oldPrice) { %>
-                    <span class="strike">₹ <%= product.oldPrice %></span>
-                <% } %>
-            </div>
-        </div>
-    <% } %>
-</div>
 
 
 
