@@ -12,9 +12,10 @@
     <input type="text" placeholder="Search products..." />
     <button>Login</button>
     <a href="/cart">🛒 Cart</a>
-    <a href="/home"> home</a>
-    <a href="/customer"> customer</a>
+    <a href="/home"> home </a>
+    <a href="/customer"> customer </a>
     <a href="/register">Register</a>
+    <a href="/products">Go to Products</a>
 </div>
 
 <!-- Banner -->
@@ -25,13 +26,12 @@
 <!-- Categories -->
 <div class="categories">
      <div class="cat" onclick="window.location='/products'"></div>
-    <!--<div class="cat" ><img src="FashionShow.png" />Fashion</div>
+    <!-- <div class="cat" ><img src="FashionShow.png" />Fashion</div>
     <div class="cat"> <img src="Electronics.png" />Electronics</div>
     <div class="cat"><img src="mobile.png" />Mobiles</div>
     <div class="cat"> <img src="gloceries.png" />Groceries</div>
     <div class="cat"> <img src="sports.png" />Sports</div> -->
-    <!-- <div class="cat" onclick="window.location='/products'"> -->
-    <a href="/products">
+    <a href="/products"> 
     <div class="cat">
         <img src="FashionShow.png" />
         <p>Fashion</p>
@@ -95,31 +95,7 @@
 
 
 <!-- Products -->
-<div class="products">
-    <% products.forEach(p => { %>
-        <div class="card">
-            <img src="<%= p.image %>" />
-            <h3><%= p.name %></h3>
-            <p>₹<%= p.price %></p>
-        </div>
-    <% }) %>
-</div>
 
-<div class="product-container">
-    <% for(let product of allProducts) { %>
-        <div class="product-card">
-            <img src="/<%= product.image %>" alt="<%= product.name %>">
-            
-            <div class="product-info">
-                <h3><%= product.name %></h3>
-                <p>₹ <%= product.price %></p>
-                <% if(product.oldPrice) { %>
-                    <span class="strike">₹ <%= product.oldPrice %></span>
-                <% } %>
-            </div>
-        </div>
-    <% } %>
-</div>
 
 
 

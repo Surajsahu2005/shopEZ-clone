@@ -24,6 +24,9 @@ app.get("/", async (req, res) => {
         res.send("Error loading products");
     }
 });
+app.get("/", (req, res) => {
+    res.render("index");
+});
 app.get("/products", async (req, res) => {
     const products = await Product.find();
     res.render("products", { products });
@@ -46,9 +49,16 @@ app.post("/remove/:index", (req, res) => {
     res.redirect("/cart");
 });
 
-app.get('/', async (req, res) => {
-    const allProducts = await Product.find({}); // Fetching from DB
-    res.render('index', { allProducts }); // Sending 'allProducts' to the EJS file
+app.get("/", async (req, res) => {
+    try {
+        // 1. Fetch the data from your database
+        const allProducts = await Product.find({}); 
+        
+        // 2. Pass the data to the view as an object
+        res.render("index", { allProducts }); 
+    } catch (err) {
+        res.send("Something went wrong");
+    }
 });
 
 let cart = [];
@@ -100,6 +110,9 @@ app.post("/remove/:index", (req, res) => {
     res.redirect("/cart");
 });
 
+app.get("/test", (req, res) => {
+    res.send("Server working ✅");
+});
 
 // Server
 app.listen(8080, () => {
